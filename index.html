@@ -299,8 +299,6 @@
         .mission-section {
             background-color: var(--white);
             padding: 3rem 2rem;
-            position: relative;
-            overflow: hidden;
         }
         .mission-section .content {
             max-width: 900px;
@@ -347,8 +345,6 @@
         .contact-section {
             background-color: var(--light-green);
             padding: 3rem 2rem;
-            position: relative;
-            overflow: hidden;
         }
         .contact-wrapper {
             max-width: 1100px;
@@ -406,72 +402,7 @@
                 flex-direction: column;
             }
         }
-    
-        /* Overlay for tower image spanning hero and info sections */
-        .tower-wrapper {
-            position: relative;
-        }
-
-        .tower-wrapper .tower-overlay {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            max-width: 1000px;
-            opacity: 0.18;
-            filter: grayscale(100%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .tower-wrapper .hero,
-        .tower-wrapper .info-section {
-            position: relative;
-            z-index: 1;
-        }
-        /* Mission section background overlay */
-        .mission-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-image: url("lago_laceno_bagnoli_irpino.png");
-            background-size: cover;
-            background-position: center;
-            opacity: 0.18;
-            pointer-events: none;
-            z-index: 0;
-        }
-        .mission-section .content,
-        .mission-section .mission-list {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Contact section background overlay */
-        .contact-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-image: url("castello_di_ariano_irpino.png");
-            background-size: cover;
-            background-position: center;
-            opacity: 0.18;
-            pointer-events: none;
-            z-index: 0;
-        }
-        .contact-section .contact-wrapper {
-            position: relative;
-            z-index: 1;
-        }
-
-</style>
+    </style>
     <script>
         // Script to toggle membership buttons and donation amounts
         document.addEventListener('DOMContentLoaded', function() {
@@ -523,10 +454,6 @@
     </header>
 
     <!-- Hero -->
-    <!-- Wrapper for hero and info sections with tower overlay -->
-    <div class="tower-wrapper">
-        <!-- Single image overlay spanning the first two sections -->
-        <img src="torre_orologio_trasparente.png" alt="Torre dell'Orologio di Avellino" class="tower-overlay">
     <section class="hero">
         <div class="hero-content">
             <h1>Costruiamo comunità e opportunità ad Avellino</h1>
@@ -562,8 +489,6 @@
             </div>
         </div>
     </section>
-
-    </div> <!-- end tower-wrapper -->
 
     <!-- Forms section: Membership and Donation -->
     <section id="forms" class="forms-section">
