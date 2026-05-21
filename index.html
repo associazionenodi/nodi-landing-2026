@@ -383,6 +383,29 @@
             font-size: 0.85rem;
         }
 
+
+/* Overlay for Torre dell'Orologio across the first two sections */
+.tower-wrapper {
+    position: relative;
+    /* ensures overlay covers the content but stays behind it */
+}
+.tower-wrapper .tower-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.2;
+    filter: grayscale(1);
+    pointer-events: none;
+}
+.tower-wrapper > * {
+    position: relative;
+    z-index: 1;
+}
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .hero {
@@ -453,6 +476,11 @@
         </div>
     </header>
 
+
+    <!-- Tower wrapper for hero and info sections -->
+    <div class="tower-wrapper">
+        <!-- Semi-transparent overlay of the Torre dell'Orologio di Avellino across the first two sections -->
+        <img src="torre_orologio_trasparente.png" alt="Torre dell'Orologio di Avellino" class="tower-overlay">
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
@@ -489,6 +517,7 @@
             </div>
         </div>
     </section>
+    </div>
 
     <!-- Forms section: Membership and Donation -->
     <section id="forms" class="forms-section">
