@@ -1,79 +1,162 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Associazione NODI - I nostri progetti</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    :root {
-      --dark-orange: #c75b07;
-      --orange: #ff9c4d;
-      --light-orange: #ffeecc;
-      --accent-orange: #f47c20;
-      --gray: #f5f5f5;
-      --white: #ffffff;
-      --text-dark: #333333;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Montserrat', sans-serif; background-color: var(--white); color: var(--text-dark); line-height: 1.6; }
-    nav { background-color: var(--dark-orange); color: var(--white); padding: 1rem; }
-    nav ul { list-style: none; display: flex; gap: 1rem; }
-    nav ul li a { color: var(--white); text-decoration: none; font-weight: bold; }
-    header { background-color: var(--orange); color: var(--white); padding: 3rem 1rem; }
-
-    header h1 { margin-bottom: 0.5rem; }
-    main { max-width: 800px; margin: 0 auto; padding: 1rem; }
-    section { background-color: var(--light-orange); margin-bottom: 1.5rem; padding: 1rem; border-radius: 8px; }
-    section h2 { color: var(--dark-orange); margin-bottom: 0.5rem; }
-    a.button { display: inline-block; margin-top: 1rem; padding: 0.5rem 
-          .header-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .header-content img {
-      max-width: 150px;
-      height: auto;
-    }
-    .header-content h1 {
-      flex-grow: 1;
-      text-align: right;
-      margin-left: 1rem;
-    }
-1rem; background-color: var(--accent-orange); color: var(--white); text-decoration: none; border-radius: 4px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associazione NODI - I nostri progetti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orange-dark: #d76713;
+            --orange: #f09043;
+            --orange-light: #ffeecc;
+            --white: #ffffff;
+            --text-color: #333333;
+        }
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            background-color: var(--orange-light);
+        }
+        nav {
+            background-color: var(--white);
+            padding: 0.5rem 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            margin-right: 1.5rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            min-height: 50vh;
+            color: var(--white);
+            background: linear-gradient(180deg, var(--orange-dark) 0%, var(--orange) 100%);
+            padding: 4rem 1rem;
+        }
+        .hero-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1000px;
+        }
+        .hero-logo {
+            height: 40px;
+            margin-right: 1rem;
+        }
+        .hero h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.8rem;
+            margin: 0;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            max-width: 600px;
+            color: var(--white);
+        }
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .project {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .project h2 {
+            color: var(--orange-dark);
+            font-family: 'Lora', serif;
+            margin-top: 0;
+        }
+        .project p {
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        .project a.button {
+            display: inline-block;
+            background-color: var(--orange-dark);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .project a.button:hover {
+            background-color: var(--orange);
+        }
+    </style>
 </head>
 <body>
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="progetti.html">I nostri progetti</a></li>
-  </ul>
-</nav>
-<header>
-  <div class="header-content">
-    <img src="nodi_logo_transparent.png" alt="Logo NODI">
-    <h1>I nostri progetti</h1>
-  </div>
-</header>
-
-<main>
-  <section id="progetto1">
-    <h2>Ama il tuo cane, rispetta la tua città</h2>
-    <p>Si tratta di un progetto di sensibilizzazione della cittadinanza al fine di mantenere pulita una parte fondamentale di Avellino: Corso Vittorio Emanuele. Abbiamo coinvolto oltre 40 attività commerciali, che hanno messo a disposizione spruzzini e sacchetti gratuiti per chi passeggia con il proprio cane e ha bisogno di pulire gli angoli utilizzati. Le attività aderenti espongono il nostro logo in vetrina.</p>
-  </section>
-  <section id="progetto2">
-    <h2>Cinema e territorio</h2>
-    <p>Stiamo partecipando, insieme alla rivista <em>Contrasti</em>, al bando della Fondazione CON IL SUD per realizzare una mini produzione cinematografica che racconti il legame con la propria terra nelle città di Avellino e Potenza, accomunate dalla migrazione giovanile. Attraverso il calcio come chiave narrativa, vogliamo valorizzare identità, appartenenza, sport e tifo sano come strumenti di coesione sociale e territoriale. Il progetto è attualmente in attesa di approvazione.</p>
-  </section>
-  <section id="progetto3">
-    <h2>Petizione per la villa comunale di Avellino</h2>
-    <p>Abbiamo avviato una petizione per restituire dignità alla villa comunale di Avellino, un luogo di relax per tutte le fasce d’età. Il nostro obiettivo è riqualificare gli spazi e ristrutturare le giostrine per i bambini, rendendo la villa nuovamente fruibile e sicura per tutti. <a href="https://www.change.org/AssociazioneNodi_AV" target="_blank" class="button">Scopri di più e firma la petizione</a></p>
-  </section>
-</main>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="progetti.html">I nostri progetti</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <div class="hero-container">
+            <img src="nodi_logo_transparent.png" alt="Logo NODI" class="hero-logo">
+            <div>
+                <h1>I nostri progetti</h1>
+                <p class="subtitle">Scopri le nostre iniziative per costruire una comunità più unita, responsabile e creativa.</p>
+            </div>
+        </div>
+    </section>
+    <main>
+        <div class="project" id="progetto1">
+            <h2>Ama il tuo cane, rispetta la tua città</h2>
+            <p>
+                Questo progetto ha coinvolto oltre 40 attività lungo Corso Vittorio Emanuele per sensibilizzare i cittadini a prendersi cura degli spazi comuni. 
+                Mettiamo a disposizione spruzzini e sacchetti gratuiti per aiutare i proprietari di cani a pulire e a lasciare il corso pulito per tutti. 
+                Un gesto semplice che rafforza il senso di comunità e il rispetto per l'ambiente urbano.
+            </p>
+        </div>
+        <div class="project" id="progetto2">
+            <h2>Cinema e territorio</h2>
+            <p>
+                In collaborazione con la rivista <em>Contrasti</em>, abbiamo partecipato al bando della Fondazione CON IL SUD 
+                per realizzare una mini produzione cinematografica tra Avellino e Potenza. 
+                Attraverso la lente del calcio raccontiamo il legame con la nostra terra, 
+                esplorando identità, appartenenza, sport e tifo sano come strumenti di coesione sociale e territoriale, 
+                soprattutto per i giovani costretti a migrare.
+            </p>
+            <p>
+                Il progetto è attualmente in attesa di approvazione.
+            </p>
+        </div>
+        <div class="project" id="progetto3">
+            <h2>Petizione per la villa comunale di Avellino</h2>
+            <p>
+                Abbiamo lanciato una petizione su Change.org per restituire dignità alla villa comunale di Avellino, 
+                un luogo di relax per tutte le fasce d'età. 
+                Il nostro obiettivo è ristrutturare le giostrine e creare uno spazio sicuro e accogliente per bambini e famiglie, 
+                affinché il parco torni a essere un punto di incontro vitale per la comunità.
+            </p>
+            <a href="https://www.change.org/AssociazioneNodi_AV" target="_blank" class="button">Firma la petizione</a>
+        </div>
+    </main>
 </body>
 </html>
