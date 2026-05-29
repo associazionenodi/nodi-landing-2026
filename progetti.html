@@ -21,12 +21,30 @@
     nav { background-color: var(--dark-orange); color: var(--white); padding: 1rem; }
     nav ul { list-style: none; display: flex; gap: 1rem; }
     nav ul li a { color: var(--white); text-decoration: none; font-weight: bold; }
-    header { background-color: var(--orange); color: var(--white); text-align: center; padding: 3rem 1rem; }
+    header { background-color: var(--orange); color: var(--white); padding: 3rem 1rem; }
+
     header h1 { margin-bottom: 0.5rem; }
     main { max-width: 800px; margin: 0 auto; padding: 1rem; }
     section { background-color: var(--light-orange); margin-bottom: 1.5rem; padding: 1rem; border-radius: 8px; }
     section h2 { color: var(--dark-orange); margin-bottom: 0.5rem; }
-    a.button { display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background-color: var(--accent-orange); color: var(--white); text-decoration: none; border-radius: 4px; }
+    a.button { display: inline-block; margin-top: 1rem; padding: 0.5rem 
+          .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .header-content img {
+      max-width: 150px;
+      height: auto;
+    }
+    .header-content h1 {
+      flex-grow: 1;
+      text-align: right;
+      margin-left: 1rem;
+    }
+1rem; background-color: var(--accent-orange); color: var(--white); text-decoration: none; border-radius: 4px; }
   </style>
 </head>
 <body>
@@ -37,8 +55,12 @@
   </ul>
 </nav>
 <header>
-  <h1>I nostri progetti</h1>
+  <div class="header-content">
+    <img src="nodi_logo_transparent.png" alt="Logo NODI">
+    <h1>I nostri progetti</h1></h1>
+  </div>
 </header>
+
 <main>
   <section id="progetto1">
     <h2>Ama il tuo cane, rispetta la tua città</h2>
