@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NODI – Campagna Tesseramento 2026</title>
+    <title>NODI – Campagna Tesseramento 2026</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
@@ -426,6 +426,42 @@ pointer-events: none;e;
                 flex-direction: column;
             }
         }
+    @media (max-width: 768px) {
+    .navbar {
+        padding: 0.7rem 1rem;
+    }
+
+    .navbar .logo img {
+        height: 34px;
+    }
+
+    .navbar nav ul {
+        gap: 0.65rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar nav a {
+        font-size: 0.78rem;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 420px) {
+    .navbar nav ul {
+        gap: 0.45rem;
+    }
+
+    .navbar nav a {
+        font-size: 0.72rem;
+    }
+
+    .navbar .logo img {
+        height: 30px;
+    }
+}
+    </style>
     <script>
         // Script to toggle membership buttons and donation amounts
         document.addEventListener('DOMContentLoaded', function() {
