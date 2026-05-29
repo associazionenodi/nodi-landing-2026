@@ -426,7 +426,7 @@ pointer-events: none;e;
                 flex-direction: column;
             }
         }
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     header {
         height: auto;
         overflow: visible;
@@ -460,6 +460,34 @@ pointer-events: none;e;
         padding: 0;
     }
 
+    .navbar nav li {
+        margin: 0;
+    }
+
+    .navbar nav a {
+        font-size: 0.72rem;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 420px) {
+    .navbar {
+        padding: 0.7rem 0.6rem;
+    }
+
+    .navbar .logo img {
+        height: 28px;
+    }
+
+    .navbar nav ul {
+        gap: 0.35rem 0.55rem;
+    }
+
+    .navbar nav a {
+        font-size: 0.68rem;
+    }
+}
     .navbar nav li {
         margin: 0;
     }
