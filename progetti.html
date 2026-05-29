@@ -147,6 +147,41 @@
 .navbar nav a.active {
     color: var(--orange);
 }
+        @media (max-width: 768px) {
+    .navbar {
+        padding: 0.7rem 1rem;
+    }
+
+    .navbar .logo img {
+        height: 34px;
+    }
+
+    .navbar nav ul {
+        gap: 0.65rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar nav a {
+        font-size: 0.78rem;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 420px) {
+    .navbar nav ul {
+        gap: 0.45rem;
+    }
+
+    .navbar nav a {
+        font-size: 0.72rem;
+    }
+
+    .navbar .logo img {
+        height: 30px;
+    }
+}
     </style>
 </head>
 <body>
