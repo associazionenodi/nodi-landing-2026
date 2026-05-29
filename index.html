@@ -387,8 +387,8 @@
 /* Overlay for Torre dell'Orologio across the first two sections */
 .tower-wrapper {
     position: relative;
-    /* ensures overlay covers the content but stays behind it */
 }
+
 .tower-wrapper .tower-overlay {
     position: absolute;
     top: 0;
@@ -396,87 +396,42 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-        z-index: 1;
-opacity: 0.5;
-   filter: grayscale(1);
-   mix-blend-mode: normal;
-pointer-events: none;e;
+    z-index: 1;
+    opacity: 0.5;
+    filter: grayscale(1);
+    mix-blend-mode: normal;
+    pointer-events: none;
 }
+
 .tower-wrapper > * {
     position: relative;
     z-index: 2;
-
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero-image {
-                margin-top: 2rem;
-            }
-            .forms-wrapper {
-                flex-direction: column;
-            }
-            .info-card {
-                flex: 1 1 100%;
-            }
-            .contact-wrapper {
-                flex-direction: column;
-            }
-        }
-    @media (max-width: 768px) {
-    .navbar {
-        padding: 0.7rem 1rem;
-    }
-
-    .navbar .logo img {
-        height: 34px;
-    }
-
-    .navbar nav ul {
-        gap: 0.65rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .navbar nav a {
-        font-size: 0.78rem;
-        line-height: 1.2;
-        white-space: nowrap;
-    }
 }
 
-@media (max-width: 420px) {
-    .navbar nav ul {
-        gap: 0.45rem;
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    html,
+    body {
+        overflow-x: hidden;
     }
 
-    .navbar nav a {
-        font-size: 0.72rem;
+    .navbar {
+        max-width: 100%;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 0.6rem;
+        gap: 0.5rem;
+    }
+
+    .navbar .logo {
+        justify-content: center;
+        width: 100%;
     }
 
     .navbar .logo img {
         height: 30px;
-    }
-@media (max-width: 768px) {
-    header {
-        height: auto;
-        overflow: visible;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        padding: 0.8rem 1rem;
-        height: auto;
-    }
-
-    .navbar .logo img {
-        height: 32px;
     }
 
     .navbar nav {
@@ -489,37 +444,61 @@ pointer-events: none;e;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 0.45rem 0.8rem;
+        gap: 0.35rem 0.6rem;
         margin: 0;
-        padding: 0;
+        padding: 0 0.25rem;
     }
 
     .navbar nav li {
         margin: 0;
+        text-align: center;
     }
 
     .navbar nav a {
-        font-size: 0.72rem;
+        font-size: 0.66rem;
         line-height: 1.2;
         white-space: nowrap;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 1.5rem 2.5rem;
+    }
+
+    .hero-image {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .forms-wrapper {
+        flex-direction: column;
+    }
+
+    .info-card {
+        flex: 1 1 100%;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
     }
 }
 
 @media (max-width: 420px) {
     .navbar {
-        padding: 0.7rem 0.6rem;
+        padding: 0.6rem 0.4rem;
+    }
+
+    .navbar nav ul {
+        gap: 0.3rem 0.4rem;
+    }
+
+    .navbar nav a {
+        font-size: 0.6rem;
     }
 
     .navbar .logo img {
         height: 28px;
-    }
-
-    .navbar nav ul {
-        gap: 0.35rem 0.55rem;
-    }
-
-    .navbar nav a {
-        font-size: 0.68rem;
     }
 }
     </style>
