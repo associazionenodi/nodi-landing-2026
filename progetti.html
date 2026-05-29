@@ -107,15 +107,67 @@
         .project a.button:hover {
             background-color: var(--orange);
         }
+        header {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo img {
+    height: 40px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: var(--orange-dark);
+    font-weight: bold;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: var(--orange);
+}
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="progetti.html">I nostri progetti</a></li>
-        </ul>
-    </nav>
+   <header>
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo_nodi_transparent.png" alt="Logo NODI">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#mission">Missione</a></li>
+                <li><a href="index.html#forms">Associati</a></li>
+                <li><a href="index.html#donazioni">Dona</a></li>
+                <li><a href="progetti.html" class="active">I nostri progetti</a></li>
+                <li><a href="index.html#contatti">Contatti</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
     <section class="hero">
         <div class="hero-container">
             <img src="nodi_logo_transparent.png" alt="Logo NODI" class="hero-logo">
