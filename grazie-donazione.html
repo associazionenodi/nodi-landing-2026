@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grazie per il tuo sostegno - NODI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --dark-green: #0e543f;
+            --green: #1a7f5b;
+            --light-green: #eaf6ed;
+            --accent-green: #53a37b;
+            --white: #ffffff;
+            --text-dark: #333333;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--light-green), var(--white));
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .thank-you-card {
+            max-width: 720px;
+            width: 100%;
+            background-color: var(--white);
+            border-radius: 18px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+            border-top: 6px solid var(--dark-green);
+        }
+
+        .thank-you-card img {
+            height: 70px;
+            margin-bottom: 1.5rem;
+        }
+
+        .thank-you-card h1 {
+            font-family: 'Lora', serif;
+            color: var(--dark-green);
+            font-size: 2.3rem;
+            margin: 0;
+        }
+
+        .line {
+            width: 70px;
+            height: 4px;
+            background-color: var(--accent-green);
+            border-radius: 999px;
+            margin: 1rem auto 1.5rem;
+        }
+
+        .thank-you-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            color: var(--dark-green);
+            font-weight: 700;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 0.85rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: var(--green);
+            transform: translateY(-1px);
+        }
+
+        .button-secondary {
+            background-color: transparent;
+            color: var(--dark-green);
+            border: 2px solid var(--dark-green);
+        }
+
+        .button-secondary:hover {
+            background-color: var(--dark-green);
+            color: var(--white);
+        }
+
+        @media (max-width: 600px) {
+            .thank-you-card {
+                padding: 2.2rem 1.4rem;
+            }
+
+            .thank-you-card h1 {
+                font-size: 1.8rem;
+            }
+
+            .thank-you-card img {
+                height: 58px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="thank-you-card">
+        <img src="logo_nodi_transparent.png" alt="Logo NODI">
+
+        <h1>Grazie per il tuo sostegno</h1>
+        <div class="line"></div>
+
+        <p>
+            Abbiamo ricevuto la tua disponibilità a sostenere NODI.
+        </p>
+
+        <p>
+            Ogni contributo ci aiuta a costruire nuove iniziative, creare occasioni di incontro
+            e dare forza ai progetti dedicati ad Avellino e alla sua provincia.
+        </p>
+
+        <p class="highlight">
+            Ti ricontatteremo presto per completare la donazione e indicarti le modalità operative.
+        </p>
+
+        <div class="buttons">
+            <a href="index.html" class="button">Torna alla home</a>
+            <a href="progetti.html" class="button button-secondary">Scopri i progetti</a>
+        </div>
+    </div>
+</body>
+</html>
