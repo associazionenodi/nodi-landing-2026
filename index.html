@@ -606,12 +606,6 @@
                     <button type="button" data-value="nuova" class="active">Nuova iscrizione</button>
                     <button type="button" data-value="rinnovo">Rinnovo tessera</button>
                 </div>
-                <!--
-                    Per inviare automaticamente i dati del form alla casella di posta dell'associazione
-                    utilizziamo il servizio FormSubmit. Questo servizio inoltra i dati del modulo
-                    direttamente all'email specificata senza richiedere al visitatore di aprire un client
-                    di posta. Per maggiori informazioni: https://formsubmit.co.
-                -->
                <form action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value="58075940-8b18-432e-aa71-ef3bab87043c">
     <input type="hidden" name="subject" value="Nuova richiesta di associazione NODI">
@@ -669,9 +663,7 @@
     <input type="hidden" name="from_name" value="Associazione NODI - Sito Web">
     <input type="hidden" name="redirect" value="https://associazionenodi.github.io/nodi-landing-2026/grazie-donazione.html">
     <input type="checkbox" name="botcheck" style="display:none;">
-
     <input type="hidden" id="donationAmount" name="Importo selezionato" value="" />
-
     <div class="form-group" id="otherAmount" style="display:none;">
         <label for="amountCustom">Importo (EUR)</label>
         <input type="number" id="amountCustom" name="Importo personalizzato" min="1" />
