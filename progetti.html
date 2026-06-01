@@ -366,16 +366,31 @@ main {
 }
         .hero-side-image {
     position: absolute;
-    right: 2rem;
+    right: -4rem;
     top: 50%;
     transform: translateY(-50%);
-    width: clamp(220px, 28vw, 360px);
-    max-height: 82%;
-    object-fit: contain;
-    opacity: 0.42;
+    width: clamp(420px, 48vw, 680px);
+    height: 120%;
+    object-fit: cover;
+    opacity: 0.46;
     z-index: 1;
     pointer-events: none;
-    border-radius: 18px;
+    border-radius: 0;
+
+    -webkit-mask-image: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.95) 45%,
+        rgba(0, 0, 0, 0.45) 72%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    mask-image: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.95) 45%,
+        rgba(0, 0, 0, 0.45) 72%,
+        rgba(0, 0, 0, 0) 100%
+    );
 }
 
 .hero-container {
