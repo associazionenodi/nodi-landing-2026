@@ -49,6 +49,8 @@
             text-align: center;
             min-height: 50vh;
             color: var(--white);
+            position: relative;
+            overflow: hidden;
             background:
     radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 35%),
     linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 45%, var(--orange-dark) 100%);
@@ -81,19 +83,6 @@
     padding: 2rem 1rem;
     position: relative;
     z-index: 1;
-}
-
-main::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("panorama_di_collina_italiana_pastello.png");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
-    opacity: 0.12;
-    z-index: 0;
-    pointer-events: none;
 }
 
 main > * {
@@ -375,6 +364,38 @@ main {
         font-size: 1.45rem;
     }
 }
+        .hero-side-image {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(220px, 28vw, 360px);
+    max-height: 82%;
+    object-fit: contain;
+    opacity: 0.42;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 18px;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    justify-content: flex-start;
+    padding-right: 360px;
+}
+
+@media (max-width: 900px) {
+    .hero-container {
+        padding-right: 0;
+        justify-content: center;
+    }
+
+    .hero-side-image {
+        display: none;
+    }
+}
     </style>
 </head>
 <body>
@@ -396,15 +417,17 @@ main {
         </nav>
     </div>
 </header>
-    <section class="hero">
-        <div class="hero-container">
-            <img src="nodi_logo_transparent.png" alt="Logo NODI" class="hero-logo">
-            <div>
-                <h1>I nostri progetti</h1>
-                <p class="subtitle">Scopri le nostre iniziative per costruire una comunità più unita, responsabile e creativa.</p>
-            </div>
+ <section class="hero">
+    <div class="hero-container">
+        <img src="nodi_logo_transparent.png" alt="Logo NODI" class="hero-logo">
+        <div>
+            <h1>I nostri progetti</h1>
+            <p class="subtitle">Scopri le nostre iniziative per costruire una comunità più unita, responsabile e creativa.</p>
         </div>
-    </section>
+    </div>
+
+    <img src="panorama_di_collina_italiana_pastello.png" alt="" class="hero-side-image" aria-hidden="true">
+</section>
     <main>
         <div class="project" id="progetto1">
             <h2>Ama il tuo cane, rispetta la tua città</h2>
