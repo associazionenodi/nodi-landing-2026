@@ -470,39 +470,36 @@ main {
             Le idee migliori nascono dal territorio. Aiutaci a farle diventare realtà.
         </p>
 
-        <form class="idea-form" action="https://formsubmit.co/associazionenodi@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="Nuova idea progetto dal sito NODI">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://associazionenodi.github.io/nodi-landing-2026/grazie.html">
-            <label for="ideaName">Nome e Cognome</label>
-            <input type="text" id="ideaName" name="Nome e Cognome" required>
+       <form class="idea-form" action="https://formsubmit.co/nodiassociazione@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Nuova idea progetto dal sito NODI">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://associazionenodi.github.io/nodi-landing-2026/grazie.html">
+    <input type="text" name="_honey" style="display:none">
 
-            <label for="ideaEmail">Email</label>
-            <input type="email" id="ideaEmail" name="Email" required>
+    <label for="ideaName">Nome e Cognome</label>
+    <input type="text" id="ideaName" name="name" required>
 
-            <label for="ideaCity">Comune / realtà di riferimento</label>
-            <input type="text" id="ideaCity" name="Comune o realtà di riferimento">
+    <label for="ideaEmail">Email</label>
+    <input type="email" id="ideaEmail" name="email" required>
 
-            <label for="ideaTitle">Titolo dell’idea</label>
-            <input type="text" id="ideaTitle" name="Titolo dell'idea" required>
+    <label for="ideaCity">Comune / realtà di riferimento</label>
+    <input type="text" id="ideaCity" name="comune_o_realta">
 
-            <label for="ideaText">Raccontaci il progetto</label>
-            <textarea id="ideaText" name="Descrizione del progetto" rows="5" required></textarea>
+    <label for="ideaTitle">Titolo dell’idea</label>
+    <input type="text" id="ideaTitle" name="titolo_idea" required>
 
-            <label for="ideaSupport">Come vorresti contribuire?</label>
-            <textarea id="ideaSupport" name="Come vorresti contribuire" rows="3"></textarea>
+    <label for="ideaText">Raccontaci il progetto</label>
+    <textarea id="ideaText" name="descrizione_progetto" rows="5" required></textarea>
 
-            <div class="idea-privacy">
-                <input type="checkbox" id="ideaPrivacy" name="Privacy" value="Accettata" required>
-                <label for="ideaPrivacy">
-                    Acconsento al trattamento dei miei dati per essere ricontattato dall’associazione NODI.
-                </label>
-            </div>
+    <label for="ideaSupport">Come vorresti contribuire?</label>
+    <textarea id="ideaSupport" name="contributo_personale" rows="3"></textarea>
 
-            <button type="submit" class="idea-submit">Proponi il tuo progetto</button>
-        </form>
-    </aside>
-    </main>
-</body>
-</html>
+    <div class="idea-privacy">
+        <input type="checkbox" id="ideaPrivacy" name="privacy" value="Accettata" required>
+        <label for="ideaPrivacy">
+            Acconsento al trattamento dei miei dati per essere ricontattato dall’associazione NODI.
+        </label>
+    </div>
+
+    <button type="submit" class="idea-submit">Proponi il tuo progetto</button>
+</form>
