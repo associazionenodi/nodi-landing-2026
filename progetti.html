@@ -231,6 +231,149 @@ main > * {
         font-size: 0.68rem;
     }
 }
+        /* Layout progetti + box idee */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 2rem;
+    align-items: start;
+}
+
+.project {
+    grid-column: 1;
+}
+
+/* Box laterale per proporre idee e progetti */
+.idea-card {
+    grid-column: 2;
+    grid-row: 1 / span 10;
+    background-color: var(--white);
+    border-radius: 14px;
+    padding: 2rem;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+    border-top: 5px solid var(--orange-dark);
+    position: sticky;
+    top: 95px;
+}
+
+.idea-card h2 {
+    color: var(--orange-dark);
+    font-family: 'Lora', serif;
+    font-size: 1.7rem;
+    margin: 0;
+}
+
+.idea-line {
+    width: 56px;
+    height: 4px;
+    background-color: var(--orange);
+    border-radius: 999px;
+    margin: 0.8rem 0 1.2rem;
+}
+
+.idea-subtitle {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.idea-card p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.idea-final {
+    color: var(--orange-dark);
+    font-weight: 700;
+}
+
+.idea-form {
+    margin-top: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.idea-form label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--orange-dark);
+}
+
+.idea-form input,
+.idea-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(215, 103, 19, 0.25);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    background-color: #fffaf3;
+}
+
+.idea-form textarea {
+    resize: vertical;
+}
+
+.idea-privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+
+.idea-privacy input {
+    width: auto;
+    margin-top: 0.2rem;
+}
+
+.idea-submit {
+    background-color: var(--orange-dark);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.idea-submit:hover {
+    background-color: var(--orange);
+    transform: translateY(-1px);
+}
+
+/* Versione tablet e smartphone */
+@media (max-width: 900px) {
+    main {
+        display: block;
+        max-width: 1000px;
+        padding: 2rem 1rem;
+    }
+
+    .idea-card {
+        position: static;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .idea-card {
+        padding: 1.5rem;
+    }
+
+    .idea-card h2 {
+        font-size: 1.45rem;
+    }
 }
     </style>
 </head>
@@ -305,6 +448,61 @@ main > * {
         </p>
         <a href="https://www.youtube.com/@AssociazioneNODI" target="_blank" class="button">Ascolta il podcast su YouTube</a>
     </div>
+          <aside class="idea-card">
+        <h2>Hai un’idea per il territorio?</h2>
+        <div class="idea-line"></div>
+
+        <p class="idea-subtitle">
+            Raccontaci il tuo progetto, la tua proposta o un bisogno che hai intercettato nella tua comunità.
+        </p>
+
+        <p>
+            NODI nasce per ascoltare, connettere e trasformare le idee in iniziative concrete.
+        </p>
+
+        <p>
+            Se hai un progetto per Avellino, per la provincia o per la tua comunità, condividilo con noi:
+            lo valuteremo insieme e proveremo a costruire un percorso per realizzarlo, con il tuo supporto
+            o attraverso la ricerca di partner, competenze e fondi.
+        </p>
+
+        <p class="idea-final">
+            Le idee migliori nascono dal territorio. Aiutaci a farle diventare realtà.
+        </p>
+
+        <form class="idea-form" action="https://formsubmit.co/associazionenodi@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Nuova idea progetto dal sito NODI">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
+            <label for="ideaName">Nome e Cognome</label>
+            <input type="text" id="ideaName" name="Nome e Cognome" required>
+
+            <label for="ideaEmail">Email</label>
+            <input type="email" id="ideaEmail" name="Email" required>
+
+            <label for="ideaCity">Comune / realtà di riferimento</label>
+            <input type="text" id="ideaCity" name="Comune o realtà di riferimento">
+
+            <label for="ideaTitle">Titolo dell’idea</label>
+            <input type="text" id="ideaTitle" name="Titolo dell'idea" required>
+
+            <label for="ideaText">Raccontaci il progetto</label>
+            <textarea id="ideaText" name="Descrizione del progetto" rows="5" required></textarea>
+
+            <label for="ideaSupport">Come vorresti contribuire?</label>
+            <textarea id="ideaSupport" name="Come vorresti contribuire" rows="3"></textarea>
+
+            <div class="idea-privacy">
+                <input type="checkbox" id="ideaPrivacy" name="Privacy" value="Accettata" required>
+                <label for="ideaPrivacy">
+                    Acconsento al trattamento dei miei dati per essere ricontattato dall’associazione NODI.
+                </label>
+            </div>
+
+            <button type="submit" class="idea-submit">Proponi il tuo progetto</button>
+        </form>
+    </aside>
     </main>
 </body>
 </html>
