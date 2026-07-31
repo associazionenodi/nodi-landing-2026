@@ -13,34 +13,59 @@
             --white: #ffffff;
             --text-color: #333333;
         }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
             color: var(--text-color);
             background-color: var(--orange-light);
         }
-        nav {
+
+        header {
             background-color: var(--white);
-            padding: 0.5rem 0,5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        nav ul {
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+        }
+
+        .navbar nav ul {
             list-style: none;
             display: flex;
+            gap: 2rem;
             margin: 0;
             padding: 0;
+            align-items: center;
         }
-        nav li {
-            margin-right: 1.5rem;
-        }
-        nav a {
+
+        .navbar nav a {
             text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
+            color: var(--orange-dark);
+            font-weight: bold;
         }
-        nav a:hover {
-            text-decoration: underline;
+
+        .navbar nav a:hover,
+        .navbar nav a.active {
+            color: var(--orange);
         }
+
         .hero {
             display: flex;
             align-items: center;
@@ -52,59 +77,101 @@
             position: relative;
             overflow: hidden;
             background:
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 35%),
-    linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 45%, var(--orange-dark) 100%);
-            padding: 1rem 1rem;
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 35%),
+                linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 45%, var(--orange-dark) 100%);
+            padding: 1rem;
         }
+
         .hero-container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1000px;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-            max-width: 1000px;
+            justify-content: flex-start;
+            padding-right: 300px;
         }
+
         .hero-logo {
             height: 40px;
             margin-right: 1rem;
         }
+
         .hero h1 {
             font-family: 'Lora', serif;
             font-size: 2.8rem;
             margin: 0;
         }
+
         .subtitle {
             font-size: 1.2rem;
             margin-top: 0.5rem;
             max-width: 600px;
             color: var(--white);
         }
-       main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    position: relative;
-    z-index: 1;
-}
 
-main > * {
-    position: relative;
-    z-index: 1;
-}
+        .hero-side-image {
+            position: absolute;
+            right: -7rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: clamp(560px, 62vw, 900px);
+            height: 130%;
+            object-fit: cover;
+            object-position: 15% center;
+            opacity: 0.62;
+            z-index: 1;
+            pointer-events: none;
+            filter: blur(0.2px);
+            -webkit-mask-image: linear-gradient(115deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.03) 16%, rgba(0,0,0,0.12) 28%, rgba(0,0,0,0.32) 44%, rgba(0,0,0,0.62) 62%, rgba(0,0,0,0.88) 78%, rgba(0,0,0,1) 100%);
+            mask-image: linear-gradient(115deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.03) 16%, rgba(0,0,0,0.12) 28%, rgba(0,0,0,0.32) 44%, rgba(0,0,0,0.62) 62%, rgba(0,0,0,0.88) 78%, rgba(0,0,0,1) 100%);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 1rem;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 360px;
+            gap: 2rem;
+            align-items: start;
+        }
+
         .project {
+            grid-column: 1;
             background-color: var(--white);
             border-radius: 8px;
             padding: 2rem;
             margin-bottom: 2rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+
         .project h2 {
             color: var(--orange-dark);
             font-family: 'Lora', serif;
             margin-top: 0;
         }
+
         .project p {
             margin-bottom: 1rem;
-            line-height: 1.5;
+            line-height: 1.6;
         }
+
+        .project-label {
+            display: inline-block;
+            margin-bottom: 0.8rem;
+            padding: 0.25rem 0.7rem;
+            border-radius: 999px;
+            background-color: var(--orange-light);
+            color: var(--orange-dark);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
         .project a.button {
             display: inline-block;
             background-color: var(--orange-dark);
@@ -115,442 +182,261 @@ main > * {
             font-weight: 600;
             transition: background-color 0.3s ease;
         }
+
         .project a.button:hover {
             background-color: var(--orange);
         }
-        header {
-    background-color: var(--white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
 
-.navbar {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+        .idea-card {
+            grid-column: 2;
+            grid-row: 1 / span 10;
+            background-color: var(--white);
+            border-radius: 14px;
+            padding: 2rem;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+            border-top: 5px solid var(--orange-dark);
+            position: sticky;
+            top: 95px;
+        }
 
-.navbar .logo img {
-    height: 40px;
-}
+        .idea-card h2 {
+            color: var(--orange-dark);
+            font-family: 'Lora', serif;
+            font-size: 1.7rem;
+            margin: 0;
+        }
 
-.navbar nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
+        .idea-line {
+            width: 56px;
+            height: 4px;
+            background-color: var(--orange);
+            border-radius: 999px;
+            margin: 0.8rem 0 1.2rem;
+        }
 
-.navbar nav a {
-    text-decoration: none;
-    color: var(--orange-dark);
-    font-weight: bold;
-}
+        .idea-subtitle {
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
 
-.navbar nav a:hover,
-.navbar nav a.active {
-    color: var(--orange);
-}
-      @media (max-width: 768px) {
-    header {
-        height: auto;
-        overflow: visible;
-    }
+        .idea-card p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
 
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        padding: 0.8rem 1rem;
-        height: auto;
-    }
+        .idea-final {
+            color: var(--orange-dark);
+            font-weight: 700;
+        }
 
-    .navbar .logo img {
-        height: 32px;
-    }
+        .idea-form {
+            margin-top: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
 
-    .navbar nav {
-        width: 100%;
-    }
+        .idea-form label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--orange-dark);
+        }
 
-    .navbar nav ul {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 0.45rem 0.8rem;
-        margin: 0;
-        padding: 0;
-    }
+        .idea-form input,
+        .idea-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(215, 103, 19, 0.25);
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            background-color: #fffaf3;
+        }
 
-    .navbar nav li {
-        margin: 0;
-    }
+        .idea-form textarea {
+            resize: vertical;
+        }
 
-    .navbar nav a {
-        font-size: 0.72rem;
-        line-height: 1.2;
-        white-space: nowrap;
-    }
-}
+        .idea-privacy {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.45rem;
+            font-size: 0.78rem;
+            line-height: 1.4;
+            color: var(--text-color);
+        }
 
-@media (max-width: 420px) {
-    .navbar {
-        padding: 0.7rem 0.6rem;
-    }
+        .idea-privacy input {
+            width: auto;
+            margin-top: 0.2rem;
+        }
 
-    .navbar .logo img {
-        height: 28px;
-    }
+        .idea-submit {
+            background-color: var(--orange-dark);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            padding: 0.85rem 1rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
 
-    .navbar nav ul {
-        gap: 0.35rem 0.55rem;
-    }
+        .idea-submit:hover {
+            background-color: var(--orange);
+            transform: translateY(-1px);
+        }
 
-    .navbar nav a {
-        font-size: 0.68rem;
-    }
-}
-        /* Layout progetti + box idee */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2.5rem 1rem;
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 360px;
-    gap: 2rem;
-    align-items: start;
-}
+        @media (max-width: 900px) {
+            header { height: auto; overflow: visible; }
+            .navbar { flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.8rem 1rem; height: auto; }
+            .navbar .logo img { height: 32px; }
+            .navbar nav { width: 100%; }
+            .navbar nav ul { width: 100%; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.45rem 0.8rem; margin: 0; padding: 0; }
+            .navbar nav li { margin: 0; }
+            .navbar nav a { font-size: 0.72rem; line-height: 1.2; white-space: nowrap; }
+            .hero-container { padding-right: 0; justify-content: center; text-align: center; }
+            .hero-side-image { display: none; }
+            main { display: block; max-width: 1000px; padding: 2rem 1rem; }
+            .idea-card { position: static; margin-top: 1rem; }
+        }
 
-.project {
-    grid-column: 1;
-}
-
-/* Box laterale per proporre idee e progetti */
-.idea-card {
-    grid-column: 2;
-    grid-row: 1 / span 10;
-    background-color: var(--white);
-    border-radius: 14px;
-    padding: 2rem;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
-    border-top: 5px solid var(--orange-dark);
-    position: sticky;
-    top: 95px;
-}
-
-.idea-card h2 {
-    color: var(--orange-dark);
-    font-family: 'Lora', serif;
-    font-size: 1.7rem;
-    margin: 0;
-}
-
-.idea-line {
-    width: 56px;
-    height: 4px;
-    background-color: var(--orange);
-    border-radius: 999px;
-    margin: 0.8rem 0 1.2rem;
-}
-
-.idea-subtitle {
-    font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 1rem;
-    line-height: 1.5;
-}
-
-.idea-card p {
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-.idea-final {
-    color: var(--orange-dark);
-    font-weight: 700;
-}
-
-.idea-form {
-    margin-top: 1.4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.idea-form label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--orange-dark);
-}
-
-.idea-form input,
-.idea-form textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid rgba(215, 103, 19, 0.25);
-    border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-    background-color: #fffaf3;
-}
-
-.idea-form textarea {
-    resize: vertical;
-}
-
-.idea-privacy {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.45rem;
-    font-size: 0.78rem;
-    line-height: 1.4;
-    color: var(--text-color);
-}
-
-.idea-privacy input {
-    width: auto;
-    margin-top: 0.2rem;
-}
-
-.idea-submit {
-    background-color: var(--orange-dark);
-    color: var(--white);
-    border: none;
-    border-radius: 8px;
-    padding: 0.85rem 1rem;
-    font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.idea-submit:hover {
-    background-color: var(--orange);
-    transform: translateY(-1px);
-}
-
-/* Versione tablet e smartphone */
-@media (max-width: 900px) {
-    main {
-        display: block;
-        max-width: 1000px;
-        padding: 2rem 1rem;
-    }
-
-    .idea-card {
-        position: static;
-        margin-top: 1rem;
-    }
-}
-
-@media (max-width: 420px) {
-    .idea-card {
-        padding: 1.5rem;
-    }
-
-    .idea-card h2 {
-        font-size: 1.45rem;
-    }
-}
- .hero-side-image {
-    position: absolute;
-    right: -7rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: clamp(560px, 62vw, 900px);
-    height: 130%;
-    object-fit: cover;
-    object-position: 15% center;
-    opacity: 0.62;
-    z-index: 1;
-    pointer-events: none;
-    border-radius: 0;
-    filter: blur(0.2px);
-
-    -webkit-mask-image: linear-gradient(
-    115deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.03) 16%,
-    rgba(0, 0, 0, 0.12) 28%,
-    rgba(0, 0, 0, 0.32) 44%,
-    rgba(0, 0, 0, 0.62) 62%,
-    rgba(0, 0, 0, 0.88) 78%,
-    rgba(0, 0, 0, 1) 100%
-);
-mask-image: linear-gradient(
-    115deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.03) 16%,
-    rgba(0, 0, 0, 0.12) 28%,
-    rgba(0, 0, 0, 0.32) 44%,
-    rgba(0, 0, 0, 0.62) 62%,
-    rgba(0, 0, 0, 0.88) 78%,
-    rgba(0, 0, 0, 1) 100%
-);
-}
-
-.hero-container {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    justify-content: flex-start;
-    padding-right: 300px;
-}
-
-@media (max-width: 900px) {
-    .hero-container {
-        padding-right: 0;
-        justify-content: center;
-    }
-
-    .hero-side-image {
-        display: none;
-    }
-}
+        @media (max-width: 420px) {
+            .navbar { padding: 0.7rem 0.6rem; }
+            .navbar .logo img { height: 28px; }
+            .navbar nav ul { gap: 0.35rem 0.55rem; }
+            .navbar nav a { font-size: 0.68rem; }
+            .idea-card { padding: 1.5rem; }
+            .idea-card h2 { font-size: 1.45rem; }
+        }
     </style>
 </head>
 <body>
-   <header>
-    <div class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="logo_nodi_transparent.png" alt="Logo NODI">
-            </a>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="logo_nodi_transparent.png" alt="Logo NODI"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#mission">Missione</a></li>
+                    <li><a href="index.html#forms">Associati</a></li>
+                    <li><a href="index.html#donazioni">Dona</a></li>
+                    <li><a href="progetti.html" class="active">I nostri progetti</a></li>
+                    <li><a href="index.html#contatti">Contatti</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html#mission">Missione</a></li>
-                <li><a href="index.html#forms">Associati</a></li>
-                <li><a href="index.html#donazioni">Dona</a></li>
-                <li><a href="progetti.html" class="active">I nostri progetti</a></li>
-                <li><a href="index.html#contatti">Contatti</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
- <section class="hero">
-    <div class="hero-container">
-        <img src="nodi_logo_transparent.png" alt="Logo NODI" class="hero-logo">
-        <div>
-            <h1>I nostri progetti</h1>
-            <p class="subtitle">Scopri le nostre iniziative per costruire una comunità più unita, responsabile e creativa.</p>
-        </div>
-    </div>
+    </header>
 
-    <img src="panorama_di_collina_italiana_pastello.png" alt="" class="hero-side-image" aria-hidden="true">
-</section>
+    <section class="hero">
+        <div class="hero-container">
+            <img src="nodi_logo_transparent.png" alt="Logo NODI" class="hero-logo">
+            <div>
+                <h1>I nostri progetti</h1>
+                <p class="subtitle">Scopri le nostre iniziative per costruire una comunità più unita, responsabile e creativa.</p>
+            </div>
+        </div>
+        <img src="panorama_di_collina_italiana_pastello.png" alt="" class="hero-side-image" aria-hidden="true">
+    </section>
+
     <main>
+        <div class="project" id="fer-menti">
+            <span class="project-label">Evento territoriale</span>
+            <h2>Fer_Menti</h2>
+            <p>
+                Fer_Menti è l’evento con cui NODI mette al centro la filiera della birra artigianale irpina, raccontando il lavoro dei birrifici del territorio e il valore delle produzioni locali come occasione di incontro, cultura e sviluppo.
+            </p>
+            <p>
+                Il progetto nasce per valorizzare Avellino e la provincia attraverso tre giornate di partecipazione, confronto e scoperta: un modo per creare connessioni tra giovani, imprese, associazioni e cittadini, rafforzando il legame con l’Irpinia e con le sue energie migliori.
+            </p>
+            <p>
+                Fer_Menti non è solo un evento: è un laboratorio di comunità che unisce convivialità, identità territoriale e nuove opportunità di collaborazione.
+            </p>
+        </div>
+
         <div class="project" id="progetto1">
             <h2>Ama il tuo cane, rispetta la tua città</h2>
             <p>
-                Questo progetto ha coinvolto oltre 40 attività lungo Corso Vittorio Emanuele per sensibilizzare i cittadini a prendersi cura degli spazi comuni. 
-                Mettiamo a disposizione spruzzini e sacchetti gratuiti per aiutare i proprietari di cani a pulire e a lasciare il corso pulito per tutti. 
+                Questo progetto ha coinvolto oltre 40 attività lungo Corso Vittorio Emanuele per sensibilizzare i cittadini a prendersi cura degli spazi comuni.
+                Mettiamo a disposizione spruzzini e sacchetti gratuiti per aiutare i proprietari di cani a pulire e a lasciare il corso pulito per tutti.
                 Un gesto semplice che rafforza il senso di comunità e il rispetto per l'ambiente urbano.
             </p>
         </div>
+
         <div class="project" id="progetto2">
             <h2>Cinema e territorio</h2>
             <p>
-                In collaborazione con la rivista <em>Contrasti</em>, abbiamo partecipato al bando della Fondazione CON IL SUD 
-                per realizzare una mini produzione cinematografica tra Avellino e Potenza. 
-                Attraverso la lente del calcio raccontiamo il legame con la nostra terra, 
-                esplorando identità, appartenenza, sport e tifo sano come strumenti di coesione sociale e territoriale, 
-                soprattutto per i giovani costretti a migrare.
+                In collaborazione con la rivista <em>Contrasti</em>, abbiamo partecipato al bando della Fondazione CON IL SUD per realizzare una mini produzione cinematografica tra Avellino e Potenza.
+                Attraverso la lente del calcio raccontiamo il legame con la nostra terra, esplorando identità, appartenenza, sport e tifo sano come strumenti di coesione sociale e territoriale, soprattutto per i giovani costretti a migrare.
             </p>
-            <p>
-                Il progetto è attualmente in attesa di approvazione.
-            </p>
+            <p>Il progetto è attualmente in attesa di approvazione.</p>
         </div>
+
         <div class="project" id="progetto3">
             <h2>Petizione per la villa comunale di Avellino</h2>
             <p>
-                Abbiamo lanciato una petizione su Change.org per restituire dignità alla villa comunale di Avellino, 
-                un luogo di relax per tutte le fasce d'età. 
-                Il nostro obiettivo è ristrutturare le giostrine e creare uno spazio sicuro e accogliente per bambini e famiglie, 
-                affinché il parco torni a essere un punto di incontro vitale per la comunità.
+                Abbiamo lanciato una petizione su Change.org per restituire dignità alla villa comunale di Avellino, un luogo di relax per tutte le fasce d'età.
+                Il nostro obiettivo è ristrutturare le giostrine e creare uno spazio sicuro e accogliente per bambini e famiglie, affinché il parco torni a essere un punto di incontro vitale per la comunità.
             </p>
             <a href="https://www.change.org/AssociazioneNodi_AV" target="_blank" class="button">Firma la petizione</a>
         </div>
-          <div class="project" id="progetto4">
-        <h2>LAB NODI</h2>
-        <p>
-            LAB NODI è il nostro nuovo podcast: uno spazio associativo pensato per dare voce ad Avellino, alla provincia e alle persone che vivono il territorio — giovani, professionisti, associazioni, commercianti, sportivi, imprenditori e cittadini.<br>
-            I primi ospiti saranno i candidati a Sindaco di Avellino per le Amministrative del 2026, e vogliamo coinvolgere anche voi nella costruzione delle domande, per rendere il dialogo più partecipato e significativo.<br>
-            Non sarà un angolo politico, ma un momento di confronto serio e aperto sui temi centrali della nostra comunità. E questo è solo l’inizio: nuovi episodi seguiranno per raccontare storie, idee e progetti del nostro territorio.
-            
-            <strong>STAY TUNED!</strong>
-        </p>
-        <a href="https://www.youtube.com/@AssociazioneNODI" target="_blank" class="button">Ascolta il podcast su YouTube</a>
-    </div>
-          <aside class="idea-card">
-        <h2>Hai un’idea per il territorio?</h2>
-        <div class="idea-line"></div>
 
-        <p class="idea-subtitle">
-            Raccontaci il tuo progetto, la tua proposta o un bisogno che hai intercettato nella tua comunità.
-        </p>
+        <div class="project" id="progetto4">
+            <h2>LAB NODI</h2>
+            <p>
+                LAB NODI è il nostro nuovo podcast: uno spazio associativo pensato per dare voce ad Avellino, alla provincia e alle persone che vivono il territorio — giovani, professionisti, associazioni, commercianti, sportivi, imprenditori e cittadini.<br>
+                I primi ospiti saranno i candidati a Sindaco di Avellino per le Amministrative del 2026, e vogliamo coinvolgere anche voi nella costruzione delle domande, per rendere il dialogo più partecipato e significativo.<br>
+                Non sarà un angolo politico, ma un momento di confronto serio e aperto sui temi centrali della nostra comunità. E questo è solo l’inizio: nuovi episodi seguiranno per raccontare storie, idee e progetti del nostro territorio.
+                <strong>STAY TUNED!</strong>
+            </p>
+            <a href="https://www.youtube.com/@AssociazioneNODI" target="_blank" class="button">Ascolta il podcast su YouTube</a>
+        </div>
 
-        <p>
-            NODI nasce per ascoltare, connettere e trasformare le idee in iniziative concrete.
-        </p>
+        <aside class="idea-card">
+            <h2>Hai un’idea per il territorio?</h2>
+            <div class="idea-line"></div>
+            <p class="idea-subtitle">Raccontaci il tuo progetto, la tua proposta o un bisogno che hai intercettato nella tua comunità.</p>
+            <p>NODI nasce per ascoltare, connettere e trasformare le idee in iniziative concrete.</p>
+            <p>Se hai un progetto per Avellino, per la provincia o per la tua comunità, condividilo con noi: lo valuteremo insieme e proveremo a costruire un percorso per realizzarlo, con il tuo supporto o attraverso la ricerca di partner, competenze e fondi.</p>
+            <p class="idea-final">Le idee migliori nascono dal territorio. Aiutaci a farle diventare realtà.</p>
 
-        <p>
-            Se hai un progetto per Avellino, per la provincia o per la tua comunità, condividilo con noi:
-            lo valuteremo insieme e proveremo a costruire un percorso per realizzarlo, con il tuo supporto
-            o attraverso la ricerca di partner, competenze e fondi.
-        </p>
+            <form class="idea-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="58075940-8b18-432e-aa71-ef3bab87043c">
+                <input type="hidden" name="subject" value="Nuova idea progetto dal sito NODI">
+                <input type="hidden" name="from_name" value="Associazione NODI - Sito Web">
+                <input type="hidden" name="redirect" value="https://associazionenodi.github.io/nodi-landing-2026/grazie.html">
+                <input type="checkbox" name="botcheck" style="display:none;">
 
-        <p class="idea-final">
-            Le idee migliori nascono dal territorio. Aiutaci a farle diventare realtà.
-        </p>
+                <label for="ideaName">Nome e Cognome</label>
+                <input type="text" id="ideaName" name="Nome e Cognome" required>
 
-    <form class="idea-form" action="https://api.web3forms.com/submit" method="POST">
-    <input type="hidden" name="access_key" value="58075940-8b18-432e-aa71-ef3bab87043c">
-    <input type="hidden" name="subject" value="Nuova idea progetto dal sito NODI">
-    <input type="hidden" name="from_name" value="Associazione NODI - Sito Web">
-    <input type="hidden" name="redirect" value="https://associazionenodi.github.io/nodi-landing-2026/grazie.html">
-    <input type="checkbox" name="botcheck" style="display:none;">
+                <label for="ideaEmail">Email</label>
+                <input type="email" id="ideaEmail" name="email" required>
 
-    <label for="ideaName">Nome e Cognome</label>
-    <input type="text" id="ideaName" name="Nome e Cognome" required>
+                <label for="ideaCity">Comune / realtà di riferimento</label>
+                <input type="text" id="ideaCity" name="Comune o realtà di riferimento">
 
-    <label for="ideaEmail">Email</label>
-    <input type="email" id="ideaEmail" name="email" required>
+                <label for="ideaTitle">Titolo dell’idea</label>
+                <input type="text" id="ideaTitle" name="Titolo dell'idea" required>
 
-    <label for="ideaCity">Comune / realtà di riferimento</label>
-    <input type="text" id="ideaCity" name="Comune o realtà di riferimento">
+                <label for="ideaText">Raccontaci il progetto</label>
+                <textarea id="ideaText" name="Descrizione del progetto" rows="5" required></textarea>
 
-    <label for="ideaTitle">Titolo dell’idea</label>
-    <input type="text" id="ideaTitle" name="Titolo dell'idea" required>
+                <label for="ideaSupport">Come vorresti contribuire?</label>
+                <textarea id="ideaSupport" name="Come vorresti contribuire" rows="3"></textarea>
 
-    <label for="ideaText">Raccontaci il progetto</label>
-    <textarea id="ideaText" name="Descrizione del progetto" rows="5" required></textarea>
+                <div class="idea-privacy">
+                    <input type="checkbox" id="ideaPrivacy" name="Privacy" value="Accettata" required>
+                    <label for="ideaPrivacy">Acconsento al trattamento dei miei dati per essere ricontattato dall’associazione NODI.</label>
+                </div>
 
-    <label for="ideaSupport">Come vorresti contribuire?</label>
-    <textarea id="ideaSupport" name="Come vorresti contribuire" rows="3"></textarea>
-
-    <div class="idea-privacy">
-        <input type="checkbox" id="ideaPrivacy" name="Privacy" value="Accettata" required>
-        <label for="ideaPrivacy">
-            Acconsento al trattamento dei miei dati per essere ricontattato dall’associazione NODI.
-        </label>
-    </div>
-
-    <button type="submit" class="idea-submit">Proponi il tuo progetto</button>
-</form>
-               </aside>
+                <button type="submit" class="idea-submit">Proponi il tuo progetto</button>
+            </form>
+        </aside>
     </main>
 </body>
 </html>
