@@ -14,9 +14,7 @@
             --text-color: #333333;
         }
 
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
@@ -42,9 +40,7 @@
             justify-content: space-between;
         }
 
-        .navbar .logo img {
-            height: 40px;
-        }
+        .navbar .logo img { height: 40px; }
 
         .navbar nav ul {
             list-style: none;
@@ -62,9 +58,7 @@
         }
 
         .navbar nav a:hover,
-        .navbar nav a.active {
-            color: var(--orange);
-        }
+        .navbar nav a.active { color: var(--orange); }
 
         .hero {
             display: flex;
@@ -172,6 +166,49 @@
             text-transform: uppercase;
         }
 
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin: 0.2rem 0 1.2rem;
+        }
+
+        .project-meta span {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            background-color: #fff4e5;
+            color: var(--orange-dark);
+            border: 1px solid rgba(215, 103, 19, 0.18);
+            padding: 0.35rem 0.75rem;
+            font-size: 0.86rem;
+            font-weight: 700;
+        }
+
+        .project-socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 1.2rem;
+        }
+
+        .project-socials a {
+            display: inline-block;
+            background-color: var(--orange-dark);
+            color: var(--white);
+            padding: 0.65rem 1rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .project-socials a:hover {
+            background-color: var(--orange);
+            transform: translateY(-1px);
+        }
+
         .project a.button {
             display: inline-block;
             background-color: var(--orange-dark);
@@ -183,9 +220,7 @@
             transition: background-color 0.3s ease;
         }
 
-        .project a.button:hover {
-            background-color: var(--orange);
-        }
+        .project a.button:hover { background-color: var(--orange); }
 
         .idea-card {
             grid-column: 2;
@@ -221,74 +256,16 @@
             line-height: 1.5;
         }
 
-        .idea-card p {
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .idea-final {
-            color: var(--orange-dark);
-            font-weight: 700;
-        }
-
-        .idea-form {
-            margin-top: 1.4rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .idea-form label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--orange-dark);
-        }
-
-        .idea-form input,
-        .idea-form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid rgba(215, 103, 19, 0.25);
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            background-color: #fffaf3;
-        }
-
-        .idea-form textarea {
-            resize: vertical;
-        }
-
-        .idea-privacy {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.45rem;
-            font-size: 0.78rem;
-            line-height: 1.4;
-            color: var(--text-color);
-        }
-
-        .idea-privacy input {
-            width: auto;
-            margin-top: 0.2rem;
-        }
-
-        .idea-submit {
-            background-color: var(--orange-dark);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            padding: 0.85rem 1rem;
-            font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .idea-submit:hover {
-            background-color: var(--orange);
-            transform: translateY(-1px);
-        }
+        .idea-card p { line-height: 1.6; margin-bottom: 1rem; }
+        .idea-final { color: var(--orange-dark); font-weight: 700; }
+        .idea-form { margin-top: 1.4rem; display: flex; flex-direction: column; gap: 0.8rem; }
+        .idea-form label { font-size: 0.85rem; font-weight: 600; color: var(--orange-dark); }
+        .idea-form input, .idea-form textarea { width: 100%; padding: 0.75rem; border: 1px solid rgba(215, 103, 19, 0.25); border-radius: 8px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; background-color: #fffaf3; }
+        .idea-form textarea { resize: vertical; }
+        .idea-privacy { display: flex; align-items: flex-start; gap: 0.45rem; font-size: 0.78rem; line-height: 1.4; color: var(--text-color); }
+        .idea-privacy input { width: auto; margin-top: 0.2rem; }
+        .idea-submit { background-color: var(--orange-dark); color: var(--white); border: none; border-radius: 8px; padding: 0.85rem 1rem; font-weight: 700; font-family: 'Montserrat', sans-serif; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease; }
+        .idea-submit:hover { background-color: var(--orange); transform: translateY(-1px); }
 
         @media (max-width: 900px) {
             header { height: auto; overflow: visible; }
@@ -345,8 +322,13 @@
 
     <main>
         <div class="project" id="fer-menti">
-            <span class="project-label">Evento territoriale</span>
+            <span class="project-label">Evento territoriale · progetto in svolgimento</span>
             <h2>Fer_Menti</h2>
+            <div class="project-meta">
+                <span>In svolgimento</span>
+                <span>20 / 21 / 22 agosto</span>
+                <span>Avellino</span>
+            </div>
             <p>
                 Fer_Menti è l’evento con cui NODI mette al centro la filiera della birra artigianale irpina, raccontando il lavoro dei birrifici del territorio e il valore delle produzioni locali come occasione di incontro, cultura e sviluppo.
             </p>
@@ -356,6 +338,11 @@
             <p>
                 Fer_Menti non è solo un evento: è un laboratorio di comunità che unisce convivialità, identità territoriale e nuove opportunità di collaborazione.
             </p>
+            <div class="project-socials" aria-label="Canali social Fer_Menti e NODI">
+                <a href="https://www.instagram.com/associazione_nodi/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.facebook.com/associazionenodi/?locale=it_IT" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.tiktok.com/@associazione_nodi" target="_blank" rel="noopener">TikTok</a>
+            </div>
         </div>
 
         <div class="project" id="progetto1">
